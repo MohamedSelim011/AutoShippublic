@@ -1,8 +1,8 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-client_id = "cd0dc456a7006fe7947dba96c07b326a"
-name = "AutoShip"
-application_url = "https://auto-ship-karim.vercel.app"
+client_id = "3290908a0970cd2b259fb5bcbee8271f"
+name = "ShipMe"
+application_url = "https://auto-shippublic.vercel.app"
 embedded = true
 
 [build]
@@ -26,6 +26,18 @@ api_version = "2026-01"
   [[webhooks.subscriptions]]
   topics = [ "orders/updated" ]
   uri = "/webhooks/orders/updated"
+
+  [[webhooks.subscriptions]]
+  topics = [ "customers/data_request" ]
+  uri = "/webhooks/customers/data_request"
+
+  [[webhooks.subscriptions]]
+  topics = [ "customers/redact" ]
+  uri = "/webhooks/customers/redact"
+
+  [[webhooks.subscriptions]]
+  topics = [ "shop/redact" ]
+  uri = "/webhooks/shop/redact"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
